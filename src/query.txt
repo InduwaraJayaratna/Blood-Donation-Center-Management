@@ -1,0 +1,29 @@
+CREATE TABLE appointment (
+    a_id INT PRIMARY KEY AUTO_INCREMENT,
+    user_id INT,
+    FOREIGN KEY (user_id) REFERENCES user(user_id),
+    center VARCHAR(20),
+    date DATE,
+    blood_type VARCHAR(10)
+);
+
+
+
+CREATE TABLE feedbacks (
+    feedback_id INT PRIMARY KEY AUTO_INCREMENT,
+    user_id INT(10),
+    FOREIGN KEY (user_id) REFERENCES user(user_id),
+    name VARCHAR(10),
+    feedbacks VARCHAR(100)
+);
+
+CREATE TABLE donation (
+    donate_id INT PRIMARY KEY AUTO_INCREMENT,
+    a_id INT(10),
+    FOREIGN KEY (a_id) REFERENCES appointment(a_id),
+    user_id INT(10),
+    FOREIGN KEY (user_id) REFERENCES user(user_id),
+    center VARCHAR(20),
+    date DATE,
+    blood_type VARCHAR(10)
+);

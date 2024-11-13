@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="java" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b0e4a147-c8bb-4c70-90f4-aea58aefc9b0">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[select * from appointment]]>
+	</queryString>
+	<field name="a_id" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="user_id" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="center" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="date" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="blood_type" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<image>
+				<reportElement x="0" y="0" width="106" height="79" uuid="84732ca9-fa25-422a-bc42-b65a57debeda"/>
+				<imageExpression><![CDATA["F:\\DSE224\\EAD\\CourseWork\\logo.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="106" y="0" width="436" height="38" uuid="b4e2e153-60f5-48f9-8d00-998be175bc17"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial Black" size="24" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Life-Pulse Blood Donation center]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement x="188" y="0" width="205" height="35" uuid="d07c406e-dce0-4945-9652-871cad437c7c"/>
+				<textElement>
+					<font size="18"/>
+				</textElement>
+				<text><![CDATA[Appointment informations]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="65" splitType="Stretch">
+			<staticText>
+				<reportElement x="12" y="21" width="79" height="20" uuid="79cf37bf-1ff7-4a30-a696-42985cb7bfdc"/>
+				<text><![CDATA[Appointment ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="128" y="21" width="41" height="20" uuid="e75c68f7-080b-470f-8d31-cb048b3ac41a"/>
+				<text><![CDATA[User ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="217" y="21" width="71" height="20" uuid="e34dc3b8-aaf9-4721-89ac-b4be4a3c3543"/>
+				<text><![CDATA[Center]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="353" y="21" width="68" height="20" uuid="1d11c859-ce75-4ef5-b0d5-dadbf3b01a67"/>
+				<text><![CDATA[Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="475" y="21" width="80" height="20" uuid="1bcfe318-37b5-4599-ab81-e25a433ac7c6"/>
+				<text><![CDATA[Blood Group]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="87" splitType="Stretch">
+			<textField>
+				<reportElement x="25" y="0" width="54" height="20" forecolor="#990000" uuid="4674139f-6ab0-4f1f-b415-6da7858263f7"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial Black"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{a_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="128" y="0" width="41" height="20" forecolor="#990000" uuid="d12941ff-c3b4-48a1-a89b-a9b36194fb82"/>
+				<textElement>
+					<font fontName="Arial Black"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{user_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="217" y="0" width="71" height="20" forecolor="#990000" uuid="1125a524-5b7b-441a-be1c-ab0b1a93b11d"/>
+				<textElement>
+					<font fontName="Arial Black"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{user_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="353" y="0" width="52" height="20" forecolor="#990000" uuid="0f79f21b-6d1a-4335-9fc6-dc95c277c845"/>
+				<textElement>
+					<font fontName="Arial Black"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="475" y="0" width="80" height="20" forecolor="#990000" uuid="18b5a291-977c-4f12-bc0b-0eca2248d88d"/>
+				<textElement>
+					<font fontName="Arial Black"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{blood_type}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<staticText>
+				<reportElement x="12" y="0" width="105" height="26" uuid="d9871091-0f5f-43e0-8b42-18a36b7bfe81"/>
+				<textElement>
+					<font fontName="Bodoni MT Black" size="18"/>
+				</textElement>
+				<text><![CDATA[Signature:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="117" y="12" width="137" height="26" uuid="24e0e4b6-89e5-4ba8-b7f6-db110be47214"/>
+				<textElement>
+					<font isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[                                               ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="353" y="0" width="68" height="26" uuid="732e5d6f-2e53-4efd-a59c-473d750f0c51"/>
+				<textElement>
+					<font fontName="Bodoni MT Black" size="18"/>
+				</textElement>
+				<text><![CDATA[Date:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="405" y="12" width="109" height="26" uuid="266f5fef-75ba-4f23-b9d9-18a83d784c2d"/>
+				<textElement>
+					<font isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[                                               ]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+</jasperReport>

@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="java" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="f07faef1-f7b7-4da2-99fe-4463f383545e">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+    a.a_id,
+    a.user_id,
+    a.center AS appointment_center,
+    a.date AS appointment_date,
+    a.blood_type AS donated_blood_type
+FROM
+    appointment a
+JOIN
+    donation d ON a.a_id = d.a_id;]]>
+	</queryString>
+	<field name="a_id" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="user_id" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="appointment_center" class="java.lang.String"/>
+	<field name="appointment_date" class="java.sql.Date"/>
+	<field name="donated_blood_type" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<image>
+				<reportElement x="0" y="0" width="106" height="79" uuid="5348abaa-bea7-45fe-bc2a-0d708e4aa27b"/>
+				<imageExpression><![CDATA["F:\\DSE224\\EAD\\CourseWork\\logo.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="106" y="0" width="436" height="38" uuid="a200da93-af12-4534-a765-c4935a9d5de6"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial Black" size="24" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Life-Pulse Blood Donation center]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="173" y="54" width="265" height="25" uuid="baafe960-77c7-447e-92c0-49baa5de3d3a"/>
+				<textElement>
+					<font size="18"/>
+				</textElement>
+				<text><![CDATA[Currently Donation informations]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="493" y="0" width="62" height="20" uuid="143d6b50-e816-4459-b19c-02c3d3c3519f"/>
+				<textElement>
+					<font fontName="Arial Black"/>
+				</textElement>
+				<text><![CDATA[Blood Group]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="0" width="100" height="20" uuid="7bfb42d8-c0d8-4198-a621-4e368bcb7fed"/>
+				<textElement>
+					<font fontName="Arial Black"/>
+				</textElement>
+				<text><![CDATA[Appointment ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="131" y="0" width="42" height="20" uuid="76cc7b0d-14e4-4b04-925a-9321011034a6"/>
+				<textElement>
+					<font fontName="Arial Black"/>
+				</textElement>
+				<text><![CDATA[User ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="257" y="0" width="45" height="20" uuid="3cba9400-aa2d-4179-a409-943506697c12"/>
+				<textElement>
+					<font fontName="Arial Black"/>
+				</textElement>
+				<text><![CDATA[Center]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="409" y="0" width="44" height="20" uuid="a8b72e3f-b04a-4e17-a810-61857ec8d422"/>
+				<textElement>
+					<font fontName="Arial Black"/>
+				</textElement>
+				<text><![CDATA[Date]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="84" splitType="Stretch">
+			<textField>
+				<reportElement x="6" y="0" width="100" height="20" forecolor="#FF0000" uuid="133c8528-28d1-4528-bf37-082ef4d04d67"/>
+				<textElement>
+					<font fontName="Arial Black"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{a_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="131" y="0" width="100" height="20" forecolor="#FF0000" uuid="3af66664-ecc2-4fdf-9b65-44ac74ca9c75"/>
+				<textElement>
+					<font fontName="Arial Black"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{user_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="257" y="0" width="121" height="20" forecolor="#FF0000" uuid="3387c1f2-415b-4020-b1fc-1f866689e5b0"/>
+				<textElement>
+					<font fontName="Arial Black"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{appointment_center}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="409" y="0" width="47" height="20" forecolor="#FF0000" uuid="14588dc2-ac0a-46bb-8444-19abe2be68d1"/>
+				<textElement>
+					<font fontName="Arial Black"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{appointment_date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="493" y="0" width="37" height="20" forecolor="#FF0000" uuid="77dd00c6-aa02-491b-9d8e-b129cdf6cb40"/>
+				<textElement>
+					<font fontName="Arial Black"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{donated_blood_type}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<staticText>
+				<reportElement x="1" y="0" width="105" height="26" uuid="d56cbfd4-c1dc-4381-b996-4993b6ddaf14"/>
+				<textElement>
+					<font fontName="Bodoni MT Black" size="18"/>
+				</textElement>
+				<text><![CDATA[Signature:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="106" y="12" width="137" height="26" uuid="64094d8e-7227-433e-9f69-65eaf0e1ea7d"/>
+				<textElement>
+					<font isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[                                               ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="357" y="0" width="68" height="26" uuid="26d4f1e5-145c-40f5-80ac-4ba33e403de7"/>
+				<textElement>
+					<font fontName="Bodoni MT Black" size="18"/>
+				</textElement>
+				<text><![CDATA[Date:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="409" y="12" width="109" height="26" uuid="29980f52-11b5-4216-8508-d4430e8425fe"/>
+				<textElement>
+					<font isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[                                               ]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
